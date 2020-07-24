@@ -1,0 +1,3 @@
+tobi 100
+biyi 100
+timi 250
