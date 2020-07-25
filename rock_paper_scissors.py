@@ -1,7 +1,5 @@
 import random
 
-decider = {"scissors": "rock", 'rock': 'paper', 'paper': 'scissors'}
-# game_options = ['scissors', 'rock', 'paper']
 order = ['wolf', 'sponge', 'paper', 'air', 'water', 'dragon',
          'devil', 'lightning', 'gun', 'rock', 'fire', 'scissors',
          'snake', 'human', 'tree']
@@ -13,7 +11,6 @@ def game_result(game_order, user_choice, computer_choice):
 
     user_choice_index = game_order.index(user_choice, 7)
     lower = game_order[user_choice_index + 1:user_choice_index + 8]
-    print('lower ->', lower)
     if computer_choice in lower:
         result = f'Well done. Computer chose {computer_choice} and failed', 100
     else:
@@ -49,7 +46,7 @@ def main():
     if not game_options:
         game_options = ['rock', 'paper', 'scissors']
 
-    # build order based on what user enters
+    # build order based on input from user
     game_order = []
     for option in order:
         if option in game_options:
@@ -58,7 +55,6 @@ def main():
             game_order.append('')
 
     game_order *= 3
-    print('game_order', game_order)
     all_scores = get_scores()
     player_score = all_scores.get(player_name, 0)
 
@@ -81,4 +77,5 @@ def main():
             print('Invalid Input')
 
 
-main()
+if __name__ == "__main__":
+    main()
